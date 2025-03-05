@@ -37,7 +37,7 @@ function register(event) {
     alert("Inscription réussie !");
     saveToLocal(nom, email, password)
     cancel()
-    // window.location.href = "account.html";
+    window.location.href = "login.html";
     return true
 
 }
