@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENI - MasterMind - S'inscrire</title>
+    <link rel="stylesheet" href="../CSS/style_main.css">
+    <link rel="stylesheet" href="../CSS/form.css">
+    <script src="../JAVA/canvas.js" defer></script>
+    <script src="../JAVA/script_register.js " defer></script>
+    
+</head>
+
+<body>
+    <header>
+        <h1> ENI - MasterMind - S'inscrire</h1>
+    </header>
+    <main>
+        <nav>
+            <a href="../index.html">L'accueil</a>
+            <a href="register.html">S'inscrire</a>
+            <a href="login.html">Se connecter</a>
+            <a href="account.html">Mon compte</a>
+            <a href="jeu.html">Le jeu !</a>
+        </nav>
+    </main class="form">
+    <form name="register-user" onsubmit="register(event)">
+        <div class="section-form">
+            <label for="name">Nom d'utilisateur</label>
+            <input type="text" name="name" id="name" placeholder="Minimum 3 caractères" required minlength="3" />
+        </div>
+        <div class="section-form">
+            <label for="email">Entrez votre email</label>
+            <input type="email" name="email" id="email" placeholder="Votre email" required />
+        </div>
+        <div class="section-form">
+            <label for="mdp">Mot de passe</label>
+            <input onkeypress="security()" type="password" name="mdp" id="mdp" placeholder="Votre mot de passe" required minlength="6" />
+                <legend>Indicateur de sécurité</legend>
+                <span id="indicateur">
+                    <canvas id="canvas" width="400px" height="100px"></canvas>
+                </span>
+        </div>
+        <div class="section-form">
+            <label for="mdp_confirm">Confirmer le mot de passe</label>
+            <input type="password" name="mdp_confirm" id="mdp_confirm" placeholder="Confirmer le mot de passe"
+                required />
+        </div>
+        <div class="button-form">
+            <input type="submit" id="register" value="S'inscrire" />
+            <button type="button" onclick="cancel()">Annuler</button>
+        </div>
+    </form>
+
+    <footer>
+        <h3>Développer par le Hyoncour Gwenndal</h3>
+        <p>dans le cadre du Projet 1 HTML - CSS - JAVASCRIPT</p>
+        <p>© ENI ECOLE</p>
+    </footer>
+</body>
+
+</html>
