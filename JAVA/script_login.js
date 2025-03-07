@@ -19,7 +19,6 @@ function login(event) {
         setStatus(emailEntree)
         cancel()
         window.location.href = "account.html";
-
       } else {
         console.log("Mot de passe incorrect !");
         // Afficher un message d'erreur
@@ -63,6 +62,7 @@ function setStatus(emailEntree) {
           user.statut = "Active"; // Mettre à jour le statut
           userFound = true;
       }
+      window.location.href = "account.html";
       return user;
   });
   if (!userFound) {

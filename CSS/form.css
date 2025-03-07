@@ -7,21 +7,51 @@ form{
     align-items: center;
     font-size: 25px;
 }
-::placeholder{
+.valid::placeholder{
     font-size: 15px;
-    color: #9704aa;
+    color: #ff0000;
 }
+
 .section-form{
     display: flex;
     flex-direction: column;
     line-height: 40px;
     
 }
+p.valid,p.validOk{
+    font-size: small;
+    line-height: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+p.valid::before,p.validOk::before{
+    content: '';
+    display: inline-block;
+    margin-right: 10px;
+    height: 20px;
+    width: 20px;
+    background-image: url("../img/fleche.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px;
+
+}
+
+.valid{
+    color: #ff0000;
+}
+.validOk{
+    color: #004e32;
+    
+}
+
 .button-form{
     display: flex;
     flex-direction: row;
 }
-
 
 
 input[type="text"],input[type="email"],input[type="password"]{
@@ -32,8 +62,7 @@ input[type="text"],input[type="email"],input[type="password"]{
     outline: none;
     background-color: transparent;
     font-size: 20px;
-    border: #04AA6D 2px solid;
-    border-radius: 20px;
+    border: none;
 }
 
 textarea:focus{

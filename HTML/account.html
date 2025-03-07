@@ -7,11 +7,12 @@
   <title>Mon compte</title>
   <link rel="stylesheet" href="../CSS/style_main.css">
   <script src="../JAVA/account.js" defer></script>
+  <script src="../JAVA/unlogin.js" defer></script>
 </head>
 
 <body>
   <header>
-    <h1> ENI - MasterMind - Mon compte</h1>
+    <h1> M'<em>ENI</em>MIND - Mon compte</h1>
   </header>
   <main class="form">
     <nav>
@@ -20,8 +21,9 @@
       <a href="login.html">Se connecter</a>
       <a href="account.html">Mon compte</a>
       <a href="jeu.html">Le jeu !</a>
+      <a href=""><button type="button" class="logout" onclick="logout()">logout</button></a>
     </nav>
-    <div class="profile">
+    <div class="profile" id="profile">
       <h2>Derniers scores</h2>
       <table>
         <caption>

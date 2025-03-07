@@ -14,7 +14,7 @@
 
 <body>
     <header>
-        <h1> ENI - MasterMind - S'inscrire</h1>
+        <h1> M'<em>ENI</em>MIND - S'inscrire</h1>
     </header>
     <main>
         <nav>
@@ -23,29 +23,32 @@
             <a href="login.html">Se connecter</a>
             <a href="account.html">Mon compte</a>
             <a href="jeu.html">Le jeu !</a>
+            <a href=""><button class="logout" type="button" onclick="logout()">logout</button></a>
         </nav>
     </main class="form">
     <form name="register-user" onsubmit="register(event)">
         <div class="section-form">
             <label for="name">Nom d'utilisateur</label>
-            <input type="text" name="name" id="name" placeholder="Minimum 3 caractères" required minlength="3" />
-            <img src="../img/supprimer.png" alt="">
+            <input class="valid" type="text" name="name" id="name" placeholder="Minimum 3 caractères" required minlength="3" />
         </div>
         <div class="section-form">
             <label for="email">Entrez votre email</label>
-            <input type="email" name="email" id="email" placeholder="Votre email" required />
+            <input class="valid" type="email" name="email" id="email" placeholder="Votre email" required />
         </div>
         <div class="section-form">
             <label for="mdp">Mot de passe</label>
-            <input onkeypress="security()" type="password" name="mdp" id="mdp" placeholder="Votre mot de passe" required minlength="6" />
-                <legend>Indicateur de sécurité</legend>
+            <input class="valid" onkeypress="security()" type="password" name="mdp" id="mdp" placeholder="Votre mot de passe" required minlength="6" />
+            <p class="valid" id="car">6 caractères minimum</p>
+            <p class="valid" id="num">contient un chiffre</p>
+            <p class="valid" id="sym">contient un caractères spécial</p>
+            <legend>Indicateur de sécurité</legend>
                 <span id="indicateur">
                     <canvas id="canvas" width="400px" height="100px"></canvas>
                 </span>
         </div>
         <div class="section-form">
             <label for="mdp_confirm">Confirmer le mot de passe</label>
-            <input type="password" name="mdp_confirm" id="mdp_confirm" placeholder="Confirmer le mot de passe"
+            <input class="valid" type="password" name="mdp_confirm" id="mdp_confirm" placeholder="Confirmer le mot de passe"
                 required />
         </div>
         <div class="button-form">

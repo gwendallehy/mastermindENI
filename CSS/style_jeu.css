@@ -5,15 +5,33 @@ body{
     justify-content: center;
     flex-direction: column;
 }
-header {
+header.game {
     background-color: grey;
     height: 100px;
     margin: 0 0 0 0;
     width: 800px;
     display: flex;
     flex-direction: column;
+    padding: 20px;
 }
 
+header.main{
+    /* background-color: grey; */
+    height: 50px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    
+}
+.disparaitre{
+    display: none;
+}
 nav{
     display: flex;
     flex-direction: row
@@ -45,6 +63,11 @@ main{
     position: absolute;
     left: 50%;
 }
+
+.barreNon{
+display: none;
+}
+
 .rond-vide{
     background-color: grey;
     width: 50px;

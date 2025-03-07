@@ -113,6 +113,12 @@ function verifColor() {
   item+=4
   if (veriftab[0] == "green" && veriftab[1] == "green" && veriftab[2] == "green" && veriftab[3] == "green") {
     console.log("C'est gagné ! en "+idTentative+" tentative");
+    for (let index = idTentative+1; index < 8; index++) {
+        let supprimerResult = document.getElementById(index)
+        supprimerResult.className = "disparaitre"
+        let supprimerBarre = document.getElementById("barre")
+        supprimerBarre.className = "barreNon"
+    }
     win()
   }
 }
@@ -140,6 +146,8 @@ function win() {
   // Sauvegarder les utilisateurs mis à jour
   localStorage.setItem('users', JSON.stringify(users));
   console.log("c'est modif");
+
+
   
 }
 

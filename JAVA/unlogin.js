@@ -22,5 +22,3 @@ function logout() {
     localStorage.setItem('users', JSON.stringify(users));
     console.log("Déconnexion réussie.");
  }
- // Ajouter un event listener au bouton logout
- document.getElementById("logoutButton").addEventListener("click", logout);

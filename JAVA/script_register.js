@@ -6,9 +6,13 @@ submit.addEventListener("click", register);
 const secu = document.getElementById("mdp");
 secu.addEventListener("click", security);
 
+
 let nom, email, password, confirmPassword
 console.log(nom, email, password, confirmPassword);
 let arr = [];
+
+document.addEventListener("keyup", formOk);
+
 
 function register(event) {
     event.preventDefault();
@@ -87,6 +91,7 @@ function security() {
     let nbCarac = password.length;
     let minCheck = false, maxCheck = false, numCarac = false, speCarac = false;
 
+
     for (let i = 0; i < nbCarac; i++) {
         const char = password[i];
         if (!minCheck && caracteres.minuscule.includes(char)) {
@@ -119,24 +124,64 @@ function security() {
     }
 
     let securityValue = Math.pow(base, nbCarac);
-    console.log("Valeur de sécurité :", securityValue);
-
     // Appel des fonctions en fonction de la force du mot de passe
-
     // Ces fonctions (step0, step1, step2, step3) devront être définies ailleurs
-
     if (!securityValue) {
-        window.onload =step0();  // Aucune sécurité détectée (mot de passe vide ou non conforme)
-    } else if (securityValue <= 8503056) {
+        window.onload = step0();  // Aucune sécurité détectée (mot de passe vide ou non conforme)
+    } else if (securityValue <= 62523502209) {
         // Faible sécurité
-        window.onload =step1();
-    } else if (securityValue > 8503056 && securityValue < 62523502209) {
+        window.onload = step1();
+    } else if (securityValue >62523502209 && securityValue < 1235736291547681) {
         // Sécurité moyenne
-        window.onload =step2();
-    } else if (securityValue > 62523502209 && securityValue < 1235736291547681) {
+        window.onload = step2();
+    } else if (securityValue > 1235736291547681) {
         // Bonne sécurité
-        window.onload =step3();
+        window.onload = step3();
     }
 
 }
 
+function formOk() {
+    let nameUser = document.getElementById("name").value;
+    let mail = document.getElementById("email").value;
+    let password = document.getElementById("mdp").value;
+    let re = /\S+@\S+\.\S+/;
+    
+
+    if (nameUser.length >= 3) {
+        document.getElementById("name").className = "validOk"
+    } else {
+        document.getElementById("name").className = "valid"
+    }
+    if (re.test(mail) == true) {
+        document.getElementById("email").className = "validOk"
+    } else {
+        document.getElementById("email").className = "valid"
+    }
+    document.getElementById("car").className = "valid"
+    document.getElementById("num").className = "valid"
+    document.getElementById("sym").className = "valid"
+
+    for (let i = 0; i < password.length; i++) {
+        const char = password[i];
+        console.log("char : "+char);
+        const caracteres = {
+            chiffre: "0123456789",
+            special: `!"#$%&'()*+,-./`,
+        };
+
+        if (password.length >= 6) {
+            document.getElementById("car").className = "validOk"
+        } 
+        if (password.length < 6) {
+            document.getElementById("car").className = "valid"
+        } 
+        if (caracteres.chiffre.includes(char)) {
+            document.getElementById("num").className = "validOk"
+
+        }
+        if (caracteres.special.includes(char)) {
+            document.getElementById("sym").className = "validOk"
+        }
+    }
+}
